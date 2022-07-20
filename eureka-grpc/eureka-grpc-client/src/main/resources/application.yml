@@ -1,0 +1,22 @@
+# 应用名称
+spring:
+  application:
+    name: eureka-grpc-client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: false
+    fetch-registry: true
+
+server:
+  port: 8088
+grpc:
+  client:
+    eureka-grpc-client:
+      address: 'discovery:///eureka-grpc-server'
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+      negotiationType: plaintext
+    GLOBAL:
+      negotiation-type: plaintext

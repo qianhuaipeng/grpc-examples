@@ -1,0 +1,13 @@
+# 应用名称
+spring:
+  application:
+    name: grpc-client
+server:
+  port: 8081
+grpc:
+  client:
+    GLOBAL:
+      address: "static://127.0.0.1:18080"
+      negotiation-type: plaintext
+
+
